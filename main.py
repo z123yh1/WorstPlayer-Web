@@ -47,7 +47,7 @@ if function_selector == 'Top 10 worst players':
     except FileNotFoundError:
         main_panel.error("{}赛季的数据文件暂时不存在，请联系huhuhu".format(season))
 else:
-    st.title("Top 5 benefit teams")
+    st.title("Top 5 worst teams")
     # main_panel.title("队伍看板功能暂时未做")
     team_info = read_team('data/team/{}-team.txt'.format(season))
     main_panel.table(team_info)
