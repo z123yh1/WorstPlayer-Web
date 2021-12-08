@@ -21,7 +21,7 @@ def generate_side_bar(side_bar: DeltaGenerator):
 
     function_selector = side_bar.radio(
         'Functions',
-        ('Top 10 worst players', 'Top 5 benefited teams')
+        ('Top 10 worst players', 'Top 5 worst teams')
     )
 
     return season_selector, function_selector
@@ -94,7 +94,7 @@ def player_radar_chart(container, player_info, player_name, season):
 
     with open(avg_file, 'r', encoding='utf-8') as f:
         line = f.read()
-    raw_data = line.strip().split('\t')[:6]
+    raw_data = line.strip().split('\t')[1:3] + line.strip().split('\t')[4:6] + line.strip().split('\t')[7:9]
     avg_value = []
     for x in raw_data:
         avg_value.append(('%.2f' % float(x)) if x != 'NaN' else 0)
