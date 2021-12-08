@@ -1,0 +1,11 @@
+python -m pip install streamlit=1.2.0
+python -m pip install streamlit-echarts=0.3.0
+python -m pip install pyecharts=1.9.1
+python -m pip install pandas=1.3.4
+python -m pip install numpy=1.21.4
+python -m pip install matplotlib-inline=0.1.3
+python -m pip install altair = 4.1.0
+python -m pip install Pillow=8.4.0
+python -m pip install pip=21.2.3
+
+
