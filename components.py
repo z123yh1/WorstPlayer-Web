@@ -21,7 +21,7 @@ def generate_side_bar(side_bar: DeltaGenerator):
 
     function_selector = side_bar.radio(
         'Functions',
-        ('Top 10 worst players', 'Top 10 benefited teams')
+        ('Top 10 worst players', 'Top 5 benefited teams')
     )
 
     return season_selector, function_selector

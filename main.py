@@ -47,12 +47,11 @@ if function_selector == 'Top 10 worst players':
     except FileNotFoundError:
         main_panel.error("{}赛季的数据文件暂时不存在，请联系huhuhu".format(season))
 else:
-    st.title("Top 10 benefit teams")
+    st.title("Top 5 benefit teams")
     # main_panel.title("队伍看板功能暂时未做")
     team_info = read_team('data/team/{}-team.txt'.format(season))
     main_panel.table(team_info)
 
-    #main_panel.dataframe(team_info)
 
 # TODO: 调整雷达图的max值，让它看起来好看点
 # TODO: 实现球队统计看板
