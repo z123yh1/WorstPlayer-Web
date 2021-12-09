@@ -57,7 +57,6 @@ def player_pie_chart(container, player_info, player_name):
     options = {
         "title": {
             "text": "Win / Lose",
-            "subtext": "average value",
             "left": "center"
         },
         "tooltip": {"trigger": "item"},
@@ -88,13 +87,13 @@ def player_pie_chart(container, player_info, player_name):
 
 
 def player_radar_chart(container, player_info, player_name, season):
-    abilities = ['fgM', 'fgA', 'threePM', 'threePA', 'free throwM', 'free throwA']
+    abilities = ['fgM', 'assist', 'rebound', 'block', 'steal', 'turnover']
     avg_file = 'data/player/{}-avg.txt'.format(season)
     data = [list(player_info.loc[player_info['name'] == player_name][x])[0] for x in abilities]
 
     with open(avg_file, 'r', encoding='utf-8') as f:
         line = f.read()
-    raw_data = line.strip().split('\t')[1:3] + line.strip().split('\t')[4:6] + line.strip().split('\t')[7:9]
+    raw_data = line.strip().split('\t')[1:2] + line.strip().split('\t')[10:15]
     avg_value = []
     for x in raw_data:
         avg_value.append(('%.2f' % float(x)) if x != 'NaN' else 0)
@@ -104,13 +103,14 @@ def player_radar_chart(container, player_info, player_name, season):
         "tooltip": {"trigger": "item"},
         "legend": {"orient": "vertical", "left": "right"},
         "radar": {
-            "indicator": [
-                {"name": "FGM", "max": 15},
-                {"name": "FGA", "max": 15},
-                {"name": "3PM", "max": 15},
-                {"name": "3PA", "max": 50},
-                {"name": "FTM", "max": 10},
-                {"name": "FTA", "max": 10},
+           "indicator": [
+                {"name": "FGM", "max": 5},
+                {"name": "AST", "max": 5},
+                {"name": "REB ", "max": 5},
+                {"name": "BLK", "max": 5},
+                {"name": "STL", "max": 5},
+                {"name": "TOV", "max": 5},
+
             ]
         },
         "series": [
