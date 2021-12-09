@@ -104,9 +104,9 @@ def player_radar_chart(container, player_info, player_name, season):
         "legend": {"orient": "vertical", "left": "right"},
         "radar": {
            "indicator": [
-                {"name": "FGM", "max": 20},
+                {"name": "FGM", "max": 8},
                 {"name": "AST", "max": 5},
-                {"name": "REB ", "max": 20},
+                {"name": "REB", "max": 8},
                 {"name": "BLK", "max": 5},
                 {"name": "STL", "max": 5},
                 {"name": "TOV", "max": 5},
